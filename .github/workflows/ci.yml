@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Check out repository
+    - name: https://github.com/Egorich42/coordinate_calculator.git
       uses: actions/checkout@v2
 
     - name: Set up Docker
