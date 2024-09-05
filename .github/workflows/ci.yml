@@ -2,29 +2,24 @@ name: CI
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   pull_request:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
     steps:
-    - name: https://github.com/Egorich42/coordinate_calculator.git
+    - name: Checkout Repository
       uses: actions/checkout@v2
 
-    - name: Set up Docker
+    - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
-
-    - name: Set up Docker Compose
-      uses: docker/setup-compose-action@v1
 
     - name: Create .env file from GitHub Secrets
       run: |
-        echo "DB_USER=${{ secrets.DB_USER }}" >> .env
+        echo "DB_USER=${{ secrets.DB_USER }}" > .env
         echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
         echo "DB_NAME=${{ secrets.DB_NAME }}" >> .env
         echo "DB_PORT=${{ secrets.DB_PORT }}" >> .env
@@ -38,4 +33,3 @@ jobs:
 
     - name: Shutdown
       run: docker-compose down
-
