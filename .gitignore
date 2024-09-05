@@ -1,0 +1,19 @@
+# IDEs
+/.idea/
+/.vscode/
+
+# Operating System
+.DS_Store
+
+# Multimedia Files
+*.m3u8
+*.mp4
+*.m4s
+*.webp
+*.jpeg
+
+# Python Artifacts
+__pycache__/
+*.pyc
+
+TODO
