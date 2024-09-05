@@ -13,8 +13,8 @@ Before running the service, ensure you have Docker and Docker-compose installed 
 
 ### Clone the Repository
 ```bash
-git clone [your-repository-url]
-cd [your-repository-directory]
+git clone git@github.com:Egorich42/coordinate_calculator.git
+cd coordinate_calculator
 ```
 
 ###Environment Configuration
@@ -73,7 +73,8 @@ curl http://localhost:8080/api/v1/getResult/1a581688-bb78-489b-8ca7-2ee62cc80836
 To run tests, use the following command:
 
 ```
-To run tests, use the following command:
+docker-compose --env-file .env_dev build
+docker-compose --env-file .env_dev run tests
 ```
 
 ### Shutting Down the Service
